@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { CrossAccountStack } from '../lib/cross-account-stack';
+import { MainAccountStack } from '../lib/main-account-stack';
 
 const app = new cdk.App();
-new CrossAccountStack(app, 'CrossAccountStack', {
+new MainAccountStack(app, 'MainAccountStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
