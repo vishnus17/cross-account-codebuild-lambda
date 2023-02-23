@@ -18,8 +18,7 @@ export class WorkloadAccountStack extends cdk.Stack {
       roleName: `lambda-execution-role`,
       assumedBy: new iam.CompositePrincipal(
         new iam.ServicePrincipal('lambda.amazonaws.com'),
-        new iam.ServicePrincipal('appconfig.amazonaws.com'), // This is for letting AppConfig trigger the lambda
-        new iam.ArnPrincipal(`arn:aws:iam::${mainAccountNumber}:role/DeployerRole`), // This is for letting the lambda assume the role in the main account
+        new iam.ArnPrincipal(`arn:aws:iam::${mainAccountNumber}:role/mainaccount-role`), // This is for letting the lambda assume the role in the main account
       ),
         managedPolicies: [
         iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'),
@@ -30,7 +29,7 @@ export class WorkloadAccountStack extends cdk.Stack {
       actions: [
         'sts:AssumeRole',
       ],
-      resources: [`arn:aws:iam::${mainAccountNumber}:role/DeployerRole`],
+      resources: [`arn:aws:iam::${mainAccountNumber}:role/mainaccount-role`],
     }));
 
     // Lambda function
@@ -42,7 +41,7 @@ export class WorkloadAccountStack extends cdk.Stack {
       timeout: cdk.Duration.seconds(60),
       environment: {
         PROJECT_NAME:`codebuild-${stage}-01`,
-        ROLE_ARN: `arn:aws:iam::${mainAccountNumber}:role/DeployerRole`,
+        ROLE_ARN: `arn:aws:iam::${mainAccountNumber}:role/mainaccount-role`,
       },
       role: role,
     });

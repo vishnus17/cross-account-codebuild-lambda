@@ -6,7 +6,7 @@ import { env } from 'process';
 
 const app = new cdk.App();
 new WorkloadAccountStack(app, 'WorkloadAccountStack', {
-  stage: 'dev',
-  mainAccountNumber: 'MAIN_ACCOUNT_NUMBER',
+  stage: 'sbx',
+  mainAccountNumber: 'WORKLOAD_ACCOUNT_NUMBER',
   env: { account: env.account, region: env.region },
 });
