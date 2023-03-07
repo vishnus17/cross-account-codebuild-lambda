@@ -11,8 +11,7 @@ Lambda function to start a cross account codebuild deployment.
 * `cdk diff`        compare deployed stack with current state
 * `cdk synth`       emits the synthesized CloudFormation template
 
-
-Make sure to do `npm install` in the root directory as well as the lambda directory.
+Deploy the account1 CDK project into your workload account and deploy main-account project into your pipeline account.
 
 ### Article
 Follow the article here for the complete walkthrough:
