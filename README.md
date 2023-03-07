@@ -16,6 +16,6 @@ Make sure to do `npm install` in the root directory as well as the lambda direct
 
 ### Article
 Follow the article here for the complete walkthrough:
-[cross-account-trigger-lambda](https://vishnusblog.tech/lambda-function-cross-account-assume-role-action-example)
+[cross-account-trigger-lambda](https://vishnusblog.tech/learn-how-to-use-a-lambda-function-to-trigger-a-codebuild-in-another-account)
 
 
