@@ -1,5 +1,6 @@
 # cross-account-codebuild-lambda
-Lambda function to start a cross account codebuild deployment.
+
+CDK Project to setup cross-account CodeBuild deployment using a Lambda function
 
 [account1](https://github.com/vishnus17/cross-account-codebuild-lambda/tree/main/account1) is the workload account in the article. <br>
 
